@@ -26,7 +26,7 @@ router.post("/:userId/cover", authMiddleware, upload.single("cover"), (req, res)
 router.post("/:userId/profile", authMiddleware, upload.single("profile"), (req, res) => {
   if (!req.file) return res.status(400).json({ message: "No profile image uploaded" });
   res.json({
-    message: "Profile image uploaded successfully",
+ "Profile image uploaded successfully",
     path: req.file.path
   });
 });
