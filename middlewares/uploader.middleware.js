@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         const { userId } = req.params;
 
-        const baseFolder;
+        let baseFolder;
 
         switch (file.filename) {
             case "audio":
@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
                 baseFolder = "profiles";
                 break;
             default:
-                cb(new Error('Invalid file type');
+                cb(new Error('Invalid file type'));
                 break;
         }
 
